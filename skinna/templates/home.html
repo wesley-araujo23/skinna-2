@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+SkinnaBar
+{% endblock %}
+
+{% block conteudo %}
+
+<section class="hero">
+
+<img src="{{ url_for('static', filename='img/logo.png') }}" class="hero-logo">
+
+<h1 class="hero-title">
+SkinnaBar Choperia
+</h1>
+
+<p class="hero-sub">
+Chopp gelado • Música ao vivo • A melhor vibe da cidade
+</p>
+
+</section>
+
+
+<div class="row text-center">
+
+<div class="col-md-4">
+
+<div class="card">
+
+<h3>Cardápio</h3>
+
+<p>
+Confira nossas bebidas e porções.
+</p>
+
+<a href="{{ url_for('cardapio') }}" class="btn btn-green">
+Ver Cardápio
+</a>
+
+</div>
+
+</div>
+
+
+<div class="col-md-4">
+
+<div class="card">
+
+<h3>Programação</h3>
+
+<p>
+Veja os shows da semana.
+</p>
+
+<a href="{{ url_for('programacao') }}" class="btn btn-green">
+Ver Agenda
+</a>
+
+</div>
+
+</div>
+
+
+<div class="col-md-4">
+
+<div class="card">
+
+<h3>Contato</h3>
+
+<p>
+Localização e reservas.
+</p>
+
+<a href="{{ url_for('contato') }}" class="btn btn-green">
+Contato
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

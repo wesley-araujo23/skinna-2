@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Programação
+{% endblock %}
+
+{% block conteudo %}
+
+<h1 class="text-center text-glow">Programação da Semana</h1>
+
+{% for evento in eventos %}
+
+<div class="card card-custom p-4 mt-3">
+
+<h4>{{ evento.dia }}</h4>
+
+<p>{{ evento.evento }}</p>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}

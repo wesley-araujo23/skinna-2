@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block titulo %}Admin - Promoções{% endblock %}
+
+{% block conteudo %}
+<h2>Promoções cadastradas</h2>
+
+{% if promocoes %}
+    <ul class="list-group mb-4">
+    {% for p in promocoes %}
+        <li class="list-group-item">
+            {{ p.item.nome }} - R$ {{ p.preco_promocional }}
+            {% if p.data_fim %}
+                (válido até: {{ p.data_fim.strftime("%d/%m/%Y") }})
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhuma promoção cadastrada.</p>
+{% endif %}
+
+<hr>
+
+<h3>Adicionar nova promoção</h3>
+<form method="POST">
+    <label>Item</label>
+    <select name="item_id" class="form-control mb-2" required>
+        {% for item in itens %}
+        <option value="{{ item.id }}">{{ item.nome }}</option>
+        {% endfor %}
+    </select>
+
+    <input type="number" step="0.01" name="preco" class="form-control mb-2" placeholder="Preço promocional" required>
+
+    <label>Data fim</label>
+    <input type="date" name="data_fim" class="form-control mb-2" required>
+
+    <button type="submit" class="btn btn-success">Adicionar</button>
+</form>
+{% endblock %}

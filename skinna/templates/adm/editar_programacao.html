@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block titulo %}Admin - Programação{% endblock %}
+
+{% block conteudo %}
+<h2>Programação cadastrada</h2>
+
+{% for evento in eventos %}
+<div class="card card-custom p-4 mt-3">
+    <h4>{{ evento.dia }}</h4>
+    <p>{{ evento.evento }}</p>
+    {% if evento.imagem %}
+        <img src="{{ url_for('static', filename='uploads/' ~ evento.imagem) }}" class="img-fluid mb-2">
+    {% endif %}
+    <a href="/adm/programacao/deletar/{{ evento.id }}" class="btn btn-danger btn-sm">Deletar</a>
+</div>
+{% endfor %}
+
+<hr>
+
+<!-- Formulário de adição -->
+<h3>Adicionar novo evento</h3>
+<form method="POST" enctype="multipart/form-data">
+    <input type="text" name="dia" class="form-control mb-2" placeholder="Dia" required>
+    <input type="text" name="evento" class="form-control mb-2" placeholder="Evento" required>
+    <input type="file" name="imagem" class="form-control mb-2">
+    <button type="submit" class="btn btn-success">Adicionar</button>
+</form>
+{% endblock %}

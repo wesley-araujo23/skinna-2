@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block titulo %}Admin{% endblock %}
+
+{% block conteudo %}
+
+<h1>Painel Admin</h1>
+
+<a href="/admin/novo" class="btn btn-success mb-4">Adicionar Item</a>
+
+<table class="table table-dark">
+
+<tr>
+<th>Nome</th>
+<th>Preço</th>
+<th>Ações</th>
+</tr>
+
+{% for item in itens %}
+
+<tr>
+
+<td>{{item.nome}}</td>
+<td>R$ {{item.preco}}</td>
+
+<td>
+
+<a href="/admin/editar/{{item.id}}" class="btn btn-warning">Editar</a>
+
+<a href="/admin/deletar/{{item.id}}" class="btn btn-danger">Deletar</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

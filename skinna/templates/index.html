@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<h1>Cardápio</h1>
+
+{% for item in itens %}
+<div class="item-cardapio">
+
+    <h2>{{ item.nome }}</h2>
+
+    <p>{{ item.descricao }}</p>
+
+    <strong>R$ {{ item.preco }}</strong>
+
+</div>
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>SkinnaBar</h1>
+
+<p>Chopp • Música • Experiência</p>
+
+<a href="/cardapio" class="btn btn-green">
+Ver Cardápio
+</a>
+
+</div>
+
+</section>
+{% endfor %}
+
+{% endblock %}

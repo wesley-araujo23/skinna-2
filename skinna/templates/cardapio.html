@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Cardápio
+{% endblock %}
+
+{% block conteudo %}
+
+<h1 class="text-center text-glow mb-5">Cardápio SkinnaBar</h1>
+
+<div class="row">
+
+{% for item in itens %}
+
+<div class="col-md-4 mb-4">
+
+<div class="card fade-in p-4">
+
+<h4>{{ item.nome }}</h4>
+
+<p>{{ item.descricao }}</p>
+
+<h5>R$ {{ item.preco }}</h5>
+
+<span class="badge bg-success">
+{{ item.categoria }}
+</span>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}
