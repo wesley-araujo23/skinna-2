@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<h1>Pedidos Solicitados</h1>
+
+<table class="table table-dark table-striped">
+<tr>
+<th>Cliente</th>
+<th>Mesa</th>
+<th>Comanda</th>
+<th>Status</th>
+<th>Itens do Pedido</th>
+<th>Total</th>
+<th>Ações</th>
+</tr>
+
+{% for pedido in pedidos %}
+<tr>
+<td>{{ pedido.cliente }}</td>
+<td>{{ pedido.mesa }}</td>
+<td>{{ pedido.comanda }}</td>
+<td>{{ pedido.status|capitalize }}</td>
+
+<td>
+<ul>
+{% for item in pedido.itens %}
+<li>{{ item.produto.nome }} x{{ item.quantidade }} - R$ {{ "%.2f"|format(item.produto.preco * item.quantidade) }}</li>
+{% endfor %}
+</ul>
+</td>
+
+<td>
+R$ {{ "%.2f"|format(pedido.itens|map(attribute='produto.preco')|sum) }}
+</td>
+
+<td>
+<a href="{{ url_for('entregar', id=pedido.id) }}" class="btn btn-success mb-1">Entregar</a>
+
+<form action="{{ url_for('cancelar', id=pedido.id) }}" method="POST" style="display:inline">
+<input name="justificativa" placeholder="Motivo" required>
+<button class="btn btn-danger">Cancelar</button>
+</form>
+</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

@@ -17,8 +17,6 @@
 {% endfor %}
 
 <hr>
-
-<!-- Formulário de adição -->
 <h3>Adicionar novo evento</h3>
 <form method="POST" enctype="multipart/form-data">
     <input type="text" name="dia" class="form-control mb-2" placeholder="Dia" required>
@@ -26,4 +24,7 @@
     <input type="file" name="imagem" class="form-control mb-2">
     <button type="submit" class="btn btn-success">Adicionar</button>
 </form>
+
+<hr>
+<a href="{{ url_for('adm') }}" class="btn btn-gerenciar mt-3">Voltar</a>
 {% endblock %}

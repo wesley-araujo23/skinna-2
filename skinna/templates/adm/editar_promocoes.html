@@ -21,7 +21,6 @@
 {% endif %}
 
 <hr>
-
 <h3>Adicionar nova promoção</h3>
 <form method="POST">
     <label>Item</label>
@@ -38,4 +37,7 @@
 
     <button type="submit" class="btn btn-success">Adicionar</button>
 </form>
+
+<hr>
+<a href="{{ url_for('adm') }}" class="btn btn-gerenciar mt-3">Voltar</a>
 {% endblock %}

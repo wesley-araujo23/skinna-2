@@ -5,23 +5,29 @@
 {% block conteudo %}
 <h1 class="text-center text-glow mb-5">Painel Administrativo</h1>
 
-<div class="row">
-    <div class="col-md-4">
+<div class="row g-4">
+    <div class="col-md-3">
         <div class="card p-4 text-center shadow">
             <h3>🍺 Cardápio</h3>
-            <a href="/adm/cardapio" class="btn btn-success mt-3">Gerenciar</a>
+            <a href="{{ url_for('adm_cardapio') }}" class="btn btn-success mt-3">Gerenciar</a>
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="card p-4 text-center shadow">
             <h3>🎤 Programação</h3>
-            <a href="/adm/programacao" class="btn btn-success mt-3">Gerenciar</a>
+            <a href="{{ url_for('adm_programacao') }}" class="btn btn-success mt-3">Gerenciar</a>
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="card p-4 text-center shadow">
             <h3>🔥 Promoções</h3>
-            <a href="/adm/promocoes" class="btn btn-success mt-3">Gerenciar</a>
+            <a href="{{ url_for('adm_promocoes') }}" class="btn btn-success mt-3">Gerenciar</a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card p-4 text-center shadow">
+            <h3>📋 Pedidos</h3>
+            <a href="{{ url_for('adm_pedidos') }}" class="btn btn-success mt-3">Visualizar</a>
         </div>
     </div>
 </div>

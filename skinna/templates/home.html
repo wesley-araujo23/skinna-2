@@ -6,32 +6,15 @@ SkinnaBar
 
 {% block conteudo %}
 
-<section class="hero">
+<div class="hero fade-in">
 
-<img src="{{ url_for('static', filename='img/logo.png') }}" class="hero-logo">
+<div>
 
-<h1 class="hero-title">
-SkinnaBar Choperia
-</h1>
+<img src="{{ url_for('static', filename='img/logo.png') }}" class="logo-home">
 
-<p class="hero-sub">
-Chopp gelado • Música ao vivo • A melhor vibe da cidade
-</p>
+<h1>Skinna Bar</h1>
 
-</section>
-
-
-<div class="row text-center">
-
-<div class="col-md-4">
-
-<div class="card">
-
-<h3>Cardápio</h3>
-
-<p>
-Confira nossas bebidas e porções.
-</p>
+<p>Chopp • Música • Experiência</p>
 
 <a href="{{ url_for('cardapio') }}" class="btn btn-green">
 Ver Cardápio
@@ -41,39 +24,55 @@ Ver Cardápio
 
 </div>
 
+<div class="container mt-5">
 
-<div class="col-md-4">
+<div class="row text-center">
 
-<div class="card">
+<div class="col-md-4 mb-4">
 
-<h3>Programação</h3>
+<div class="card-produto">
 
-<p>
-Veja os shows da semana.
-</p>
+<h3>🍺 Cardápio</h3>
+
+<p>Veja todas as bebidas e comidas disponíveis.</p>
+
+<a href="{{ url_for('cardapio') }}" class="btn btn-green">
+Abrir
+</a>
+
+</div>
+
+</div>
+
+<div class="col-md-4 mb-4">
+
+<div class="card-produto">
+
+<h3>🎶 Programação</h3>
+
+<p>Confira os eventos e música ao vivo.</p>
 
 <a href="{{ url_for('programacao') }}" class="btn btn-green">
-Ver Agenda
+Ver Eventos
 </a>
 
 </div>
 
 </div>
 
+<div class="col-md-4 mb-4">
 
-<div class="col-md-4">
+<div class="card-produto">
 
-<div class="card">
+<h3>🔥 Promoções</h3>
 
-<h3>Contato</h3>
+<p>Promoções especiais do dia.</p>
 
-<p>
-Localização e reservas.
-</p>
-
-<a href="{{ url_for('contato') }}" class="btn btn-green">
-Contato
+<a href="{{ url_for('promocoes') }}" class="btn btn-green">
+Ver Promoções
 </a>
+
+</div>
 
 </div>
 
