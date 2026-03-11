@@ -1,14 +1,20 @@
 {% extends "base.html" %}
 
-{% block titulo %}Admin{% endblock %}
+{% block titulo %}
+Admin
+{% endblock %}
 
 {% block conteudo %}
 
+<div class="container">
+
 <h1>Painel Admin</h1>
 
-<a href="/admin/novo" class="btn btn-success mb-4">Adicionar Item</a>
+<a href="/adm/pedidos" class="btn btn-green mb-4">
+Ver Pedidos
+</a>
 
-<table class="table table-dark">
+<table class="table table-dark table-striped">
 
 <tr>
 <th>Nome</th>
@@ -20,14 +26,21 @@
 
 <tr>
 
-<td>{{item.nome}}</td>
-<td>R$ {{item.preco}}</td>
+<td>{{ item.nome }}</td>
+
+<td>
+R$ {{ "%.2f"|format(item.preco) }}
+</td>
 
 <td>
 
-<a href="/admin/editar/{{item.id}}" class="btn btn-warning">Editar</a>
+<a href="#" class="btn btn-warning">
+Editar
+</a>
 
-<a href="/admin/deletar/{{item.id}}" class="btn btn-danger">Deletar</a>
+<a href="#" class="btn btn-danger">
+Deletar
+</a>
 
 </td>
 
@@ -36,5 +49,7 @@
 {% endfor %}
 
 </table>
+
+</div>
 
 {% endblock %}

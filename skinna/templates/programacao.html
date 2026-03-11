@@ -8,6 +8,8 @@ Programação
 
 <h1 class="text-center text-glow">Programação da Semana</h1>
 
+{% if eventos %}
+
 {% for evento in eventos %}
 
 <div class="card card-custom p-4 mt-3">
@@ -19,5 +21,13 @@ Programação
 </div>
 
 {% endfor %}
+
+{% else %}
+
+<p class="text-center mt-4">
+Nenhum evento cadastrado ainda.
+</p>
+
+{% endif %}
 
 {% endblock %}

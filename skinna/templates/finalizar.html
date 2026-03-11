@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<h1>Finalizar Pedido</h1>
+
+<form id="form-pedido">
+<input name="cliente" placeholder="Seu nome" required>
+<input name="mesa" placeholder="Número da mesa" required>
+<input name="comanda" placeholder="Número da comanda" required>
+<input type="hidden" name="itens" id="itens-input">
+
+<button class="btn btn-green" type="submit">Enviar Pedido</button>
+</form>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+    let params = new URLSearchParams(window.location.search)
+    let itens = JSON.parse(params.get("itens") || "[]")
+    document.getElementById("itens-input").value = JSON.stringify(itens)
+
+    let form = document.getElementById("form-pedido")
+    form.addEventListener("submit", function(e){
+        e.preventDefault()
+        if(itens.length === 0){
+            alert("Adicione ao menos 1 item")
+            return
+        }
+
+        fetch("{{ url_for('enviar_pedido') }}", {
+            method: "POST",
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({
+                cliente: form.cliente.value,
+                mesa: form.mesa.value,
+                comanda: form.comanda.value,
+                itens: itens
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.status === "ok"){
+                alert("Pedido enviado com sucesso!")
+                window.location.href = "{{ url_for('cardapio') }}"
+            } else {
+                alert("Erro ao enviar pedido: " + (data.mensagem || ""))
+            }
+        })
+        .catch(err => alert("Erro: " + err))
+    })
+})
+</script>
+{% endblock %}
