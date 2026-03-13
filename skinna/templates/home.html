@@ -2,6 +2,7 @@
 
 {% block conteudo %}
 
+<<<<<<< HEAD
 <section class="hero fade-in">
     <div class="overlay-home">
 
@@ -46,5 +47,80 @@
 
     </div>
 </section>
+=======
+<div class="hero fade-in">
+
+<div>
+
+<img src="{{ url_for('static', filename='img/logo.png') }}" class="logo-home">
+
+<h1>Skinna Bar</h1>
+
+<p>Chopp • Música • Experiência</p>
+
+<a href="{{ url_for('cardapio') }}" class="btn btn-green">
+Ver Cardápio
+</a>
+
+</div>
+
+</div>
+
+<div class="container mt-5">
+
+<div class="row text-center">
+
+<div class="col-md-4 mb-4">
+
+<div class="card-produto">
+
+<h3>🍺 Cardápio</h3>
+
+<p>Veja todas as bebidas e comidas disponíveis.</p>
+
+<a href="{{ url_for('cardapio') }}" class="btn btn-green">
+Abrir
+</a>
+
+</div>
+
+</div>
+
+<div class="col-md-4 mb-4">
+
+<div class="card-produto">
+
+<h3>🎶 Programação</h3>
+
+<p>Confira os eventos e música ao vivo.</p>
+
+<a href="{{ url_for('programacao') }}" class="btn btn-green">
+Ver Eventos
+</a>
+
+</div>
+
+</div>
+
+<div class="col-md-4 mb-4">
+
+<div class="card-produto">
+
+<h3>🔥 Promoções</h3>
+
+<p>Promoções especiais do dia.</p>
+
+<a href="{{ url_for('promocoes') }}" class="btn btn-green">
+Ver Promoções
+</a>
+
+</div>
+
+</div>
+
+</div>
+>>>>>>> novo/main
+
+</div>
 
 {% endblock %}

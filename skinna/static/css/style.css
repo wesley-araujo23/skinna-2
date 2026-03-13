@@ -1,4 +1,5 @@
 /* =========================
+<<<<<<< HEAD
    BODY
 ========================= */
 body {
@@ -41,10 +42,58 @@ body {
     color: white !important;
     font-weight: 600;
     margin-left: 18px;
+=======
+   1. RESET E BASE
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000000; /* Fundo preto total */
+    color: white;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* =========================
+   2. NAVBAR CYBER
+   ========================= */
+.custom-navbar {
+    background: #000;
+    border-bottom: 2px solid #39ff14;
+    padding: 12px 0;
+    box-shadow: 0 0 25px rgba(57, 255, 20, 0.2);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #39ff14 !important;
+    text-shadow: 0 0 12px #39ff14, 0 0 25px rgba(57,255,20,0.6);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.logo {
+    height: 80px;
+    margin-right: 20px;
+}
+
+.nav-link {
+    color: white !important;
+    margin-left: 20px;
+    font-weight: 600;
+>>>>>>> novo/main
     transition: 0.3s;
 }
 
 .nav-link:hover {
+<<<<<<< HEAD
     color: #00ff00 !important;
     text-shadow: 0 0 8px rgba(0,255,0,0.4);
 }
@@ -256,4 +305,296 @@ th {
     .logo {
         height: 40px;
     }
+=======
+    color: #39ff14 !important;
+    text-shadow: 0 0 15px #39ff14, 0 0 30px rgba(57,255,20,0.5);
+}
+
+/* =========================
+   3. HERO INICIAL
+   ========================= */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
+                url("/static/img/bar.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.logo-home {
+    width: 350px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 20px #39ff14) drop-shadow(0 0 40px #39ff14);
+}
+
+.hero h1 {
+    font-size: 65px;
+    color: #39ff14;
+    text-shadow: 0 0 20px #39ff14, 0 0 40px rgba(57,255,20,0.7), 0 0 60px #39ff14;
+    margin-bottom: 15px;
+    animation: neon-flicker 2s infinite alternate;
+}
+
+.hero p {
+    font-size: 22px;
+    margin-bottom: 30px;
+    color: #ccc;
+    text-shadow: 0 0 5px rgba(57,255,20,0.5);
+}
+
+/* =========================
+   4. BOTÕES NEON
+   ========================= */
+.btn-green {
+    background: #39ff14;
+    color: black;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #39ff14, 0 0 20px rgba(57,255,20,0.5);
+}
+
+.btn-green:hover {
+    background: #2ecc1e;
+    transform: scale(1.08);
+    box-shadow: 0 0 25px #39ff14, 0 0 50px rgba(57,255,20,0.6);
+}
+
+.btn-gold {
+    background: #FFD700;
+    color: black;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 20px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 8px #FFD700, 0 0 20px rgba(255,215,0,0.4);
+}
+
+.btn-gold:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #FFD700, 0 0 30px rgba(255,215,0,0.5);
+}
+
+/* =========================
+   5. PAINEL ADMINISTRATIVO
+   ========================= */
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+.card-admin {
+    background: #050505 !important; 
+    border: 2px solid rgba(57, 255, 20, 0.4) !important;
+    border-radius: 20px;
+    padding: 40px 20px;
+    text-align: center;
+    transition: 0.4s ease;
+    box-shadow: 0 0 15px rgba(0,0,0,0.9);
+    color: #39ff14;
+    text-shadow: 0 0 5px #39ff14, 0 0 15px #39ff14;
+    animation: fade-in 0.8s ease forwards;
+}
+
+.card-admin:hover {
+    border-color: #39ff14;
+    box-shadow: 0 0 40px #39ff14, 0 0 70px rgba(57,255,20,0.5);
+    transform: translateY(-10px);
+}
+
+.card-admin h3, .card-header-admin, h2, h4, label {
+    color: #39ff14 !important;
+    text-shadow: 0 0 5px #39ff14, 0 0 15px rgba(57,255,20,0.7);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+/* Botão gerenciar */
+.btn-gerenciar {
+    background: transparent;
+    color: #39ff14;
+    border: 2px solid #39ff14;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: inset 0 0 5px rgba(57, 255, 20, 0.2);
+}
+
+.btn-gerenciar:hover {
+    background: #39ff14;
+    color: black;
+    box-shadow: 0 0 25px #39ff14, 0 0 50px rgba(57,255,20,0.6);
+    transform: scale(1.05);
+}
+
+/* =========================
+   6. FORMULÁRIOS
+   ========================= */
+form {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #000;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(57,255,20,0.3);
+    box-shadow: 0 0 20px rgba(57,255,20,0.2);
+}
+
+input, select, textarea {
+    background: #111 !important;
+    border: 1px solid #333 !important;
+    color: #39ff14 !important;
+    padding: 14px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    transition: 0.3s;
+    text-shadow: 0 0 2px #39ff14;
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(57,255,20,0.5) !important;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #39ff14 !important;
+    box-shadow: 0 0 12px rgba(57,255,20,0.6);
+    outline: none;
+}
+
+/* =========================
+   7. CARRINHO DINÂMICO
+   ========================= */
+#carrinho {
+    position: fixed;
+    right: 0;
+    top: 100px;
+    width: 280px;
+    background: #000;
+    border-left: 2px solid #39ff14;
+    padding: 20px;
+    height: 70vh;
+    overflow: auto;
+    box-shadow: -5px 0 20px rgba(0,255,20,0.3);
+    display: none;
+}
+
+#carrinho.ativo {
+    display: block;
+    animation: fade-in 0.5s ease;
+}
+
+#lista-carrinho li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #39ff14;
+    text-shadow: 0 0 5px rgba(57,255,20,0.7);
+}
+
+.total {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #39ff14;
+    font-size: 18px;
+    text-shadow: 0 0 8px #39ff14;
+}
+
+.btn-finalizar-pedido {
+    display: none;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #39ff14;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 0 20px #39ff14, 0 0 40px rgba(57,255,20,0.6);
+    transition: 0.3s;
+}
+
+.btn-finalizar-pedido.visivel {
+    display: block !important;
+    animation: fade-in 0.5s ease;
+}
+
+/* =========================
+   8. CARDÁPIO E PRODUTOS
+   ========================= */
+.card-produto {
+    background: #0a0a0a;
+    border: 1px solid rgba(57, 255, 20, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    transition: 0.4s;
+}
+
+.card-produto:hover {
+    border-color: #39ff14;
+    box-shadow: 0 0 25px #39ff14, 0 0 50px rgba(57,255,20,0.4);
+}
+
+.card-produto h4 {
+    color: #39ff14;
+    text-shadow: 0 0 5px #39ff14, 0 0 15px rgba(57,255,20,0.6);
+}
+
+.card-produto p {
+    color: white;
+    font-size: 14px;
+    min-height: 40px;
+}
+
+.preco {
+    color: #39ff14;
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(57, 255, 20, 0.3);
+}
+
+/* =========================
+   9. FOOTER E ANIMAÇÕES
+   ========================= */
+.footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid #222;
+    background: #000;
+    color: #666;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes neon-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { text-shadow: 0 0 5px #39ff14, 0 0 15px rgba(57,255,20,0.7); }
+    20%, 24%, 55% { text-shadow: none; }
+}
+
+/* =========================
+   10. RESPONSIVO
+   ========================= */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 38px; }
+    .admin-grid { grid-template-columns: 1fr; }
+>>>>>>> novo/main
 }
