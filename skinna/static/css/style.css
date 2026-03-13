@@ -8,7 +8,9 @@
 }
 
 body {
-    background: #000;
+    background:
+        radial-gradient(circle at top, rgba(20,40,20,0.25), transparent 45%),
+        linear-gradient(180deg, #000 0%, #050505 45%, #0a0a0a 100%);
     color: white;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
@@ -19,10 +21,13 @@ body {
    2. NAVBAR
    ========================= */
 .custom-navbar {
-    background: #000;
+    background: rgba(0,0,0,0.92);
+    backdrop-filter: blur(8px);
     border-bottom: 2px solid #39ff14;
     padding: 8px 0;
-    box-shadow: 0 0 15px rgba(57,255,20,0.15);
+    box-shadow:
+        0 0 18px rgba(57,255,20,0.12),
+        0 4px 20px rgba(0,0,0,0.35);
 }
 
 .navbar-brand {
@@ -45,11 +50,12 @@ body {
     margin-left: 12px;
     font-weight: 600;
     transition: 0.3s;
+    position: relative;
 }
 
 .nav-link:hover {
-    color: #39ff14 !important;
-    text-shadow: 0 0 10px #39ff14;
+    color: #7dff63 !important;
+    text-shadow: 0 0 8px rgba(57,255,20,0.45);
 }
 
 /* =========================
@@ -57,15 +63,20 @@ body {
    ========================= */
 .hero {
     min-height: auto;
-    background: linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)),
-                url('/static/img/banner.jpg') center center/cover no-repeat;
+    background:
+        linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.82)),
+        url('/static/img/banner.jpg') center center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 18px;
+    border-radius: 20px;
     margin-top: 20px;
-    padding: 35px 20px;
+    padding: 40px 20px;
+    border: 1px solid rgba(57,255,20,0.12);
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.45),
+        inset 0 0 30px rgba(57,255,20,0.04);
 }
 
 .overlay-home {
@@ -75,44 +86,48 @@ body {
 }
 
 .logo-home {
-    width: 300px;
-    max-width: 90%;
+    width: clamp(320px, 38vw, 520px);
+    max-width: 100%;
     display: block;
-    margin: 0 auto 15px auto;
+    margin: 0 auto 20px auto;
+    filter: drop-shadow(0 4px 12px rgba(57,255,20,0.12));
 }
 
 .overlay-home h1 {
     font-size: 2.1rem;
-    color: #39ff14;
+    color: #7dff63;
     font-weight: bold;
     margin-bottom: 10px;
     line-height: 1.2;
+    text-shadow: 0 0 10px rgba(57,255,20,0.18);
 }
 
 .overlay-home p {
     font-size: 1.2rem;
-    color: #ddd;
-    margin-bottom: 0;
+    color: #d8d8d8;
 }
+
 /* =========================
    4. BOTÕES
    ========================= */
 .btn-green {
-    background: #39ff14;
+    background: linear-gradient(135deg, #39ff14, #18c90f);
     color: black;
     border: none;
     padding: 12px 28px;
     border-radius: 30px;
     font-weight: bold;
     transition: 0.3s;
-    box-shadow: 0 0 12px rgba(57,255,20,0.35);
+    box-shadow:
+        0 0 12px rgba(57,255,20,0.28),
+        0 4px 14px rgba(0,0,0,0.3);
     min-height: 48px;
 }
 
 .btn-green:hover {
-    background: #2ecc1e;
+    background: linear-gradient(135deg, #4dff2a, #23d316);
     transform: scale(1.04);
-    box-shadow: 0 0 20px #39ff14;
+    box-shadow: 0 0 22px rgba(57,255,20,0.35);
 }
 
 .btn-admin {
@@ -130,36 +145,53 @@ body {
 }
 
 /* =========================
-   5. CARDS HOME / CARDÁPIO
+   5. CARDS
    ========================= */
 .card-produto {
-    background: #0a0a0a;
-    border: 1px solid rgba(57,255,20,0.2);
-    border-radius: 15px;
+    background:
+        linear-gradient(180deg, #0a0a0a, #101010);
+    border: 1px solid rgba(57,255,20,0.16);
+    border-radius: 16px;
     padding: 24px;
     transition: 0.35s;
     height: 100%;
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.35);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-produto::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(90deg, #39ff14, #9dff4f, #39ff14);
 }
 
 .card-produto:hover {
     border-color: #39ff14;
-    box-shadow: 0 0 18px rgba(57,255,20,0.3);
+    box-shadow:
+        0 0 20px rgba(57,255,20,0.18),
+        0 10px 25px rgba(0,0,0,0.4);
     transform: translateY(-5px);
 }
 
 .card-produto h3,
 .card-produto h4 {
-    color: #39ff14;
+    color: #7dff63;
     margin-bottom: 15px;
 }
 
 .card-produto p {
-    color: #ddd;
+    color: #d5d5d5;
     font-size: 14px;
 }
 
 .preco {
-    color: #39ff14;
+    color: #b7ff75;
     font-size: 22px;
     font-weight: bold;
 }
@@ -170,16 +202,17 @@ body {
 form {
     max-width: 600px;
     margin: 40px auto;
-    background: #000;
+    background: #080808;
     padding: 30px;
     border-radius: 20px;
-    border: 1px solid rgba(57,255,20,0.25);
+    border: 1px solid rgba(57,255,20,0.18);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
 }
 
 input, select, textarea {
     background: #111 !important;
     border: 1px solid #333 !important;
-    color: #39ff14 !important;
+    color: #7dff63 !important;
     padding: 14px;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -188,7 +221,7 @@ input, select, textarea {
 
 input:focus, select:focus, textarea:focus {
     border-color: #39ff14 !important;
-    box-shadow: 0 0 10px rgba(57,255,20,0.35);
+    box-shadow: 0 0 10px rgba(57,255,20,0.28);
     outline: none;
 }
 
@@ -200,30 +233,22 @@ input:focus, select:focus, textarea:focus {
     right: 0;
     top: 90px;
     width: 280px;
-    background: #000;
+    background: #050505;
     border-left: 2px solid #39ff14;
     padding: 20px;
     height: 70vh;
     overflow: auto;
-    box-shadow: -4px 0 15px rgba(57,255,20,0.15);
+    box-shadow: -4px 0 15px rgba(57,255,20,0.12);
     display: none;
     z-index: 999;
 }
 
-#carrinho.ativo {
-    display: block;
-}
-
 #lista-carrinho li {
-    margin-bottom: 10px;
-    color: #39ff14;
-    font-size: 14px;
+    color: #7dff63;
 }
 
 .total {
-    margin-top: 15px;
-    font-weight: bold;
-    color: #39ff14;
+    color: #b7ff75;
 }
 
 /* =========================
@@ -233,30 +258,12 @@ input:focus, select:focus, textarea:focus {
     text-align: center;
     padding: 30px;
     margin-top: 50px;
-    border-top: 1px solid #222;
-    color: #666;
+    border-top: 1px solid #1b1b1b;
+    color: #777;
 }
 
 /* =========================
-   9. ANIMAÇÕES
-   ========================= */
-.fade-in {
-    animation: fade-in 0.8s ease;
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* =========================
-   10. RESPONSIVO MOBILE
+   9. RESPONSIVO
    ========================= */
 @media (max-width: 768px) {
     .hero {
@@ -265,10 +272,10 @@ input:focus, select:focus, textarea:focus {
         padding: 15px;
     }
 
-   .logo-home {
-    width: 260px;
-    max-width: 85%;
-}
+    .logo-home {
+        width: 260px;
+        max-width: 85%;
+    }
 
     .overlay-home h1 {
         font-size: 1.9rem;
@@ -280,15 +287,6 @@ input:focus, select:focus, textarea:focus {
 
     .card-produto {
         padding: 20px;
-    }
-
-    #carrinho {
-        width: 100%;
-        height: auto;
-        bottom: 0;
-        top: auto;
-        border-left: none;
-        border-top: 2px solid #39ff14;
     }
 
     .navbar-brand {
